@@ -87,5 +87,5 @@ const AuthContextProvider = ({ children }) => {
         </AuthContext.Provider>
     )
 }
-
+export {AuthContext}
 export default AuthContextProvider
