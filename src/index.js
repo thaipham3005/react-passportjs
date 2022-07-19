@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './assets/scss/main.scss'
 import AuthContextProvider from './context/Auth.provider';
 import ThemeContextProvider from './context/Theme.provider';
 
@@ -19,7 +20,6 @@ root.render(
         <App />
       </AuthContextProvider>
     </ThemeContextProvider>
-
   </React.StrictMode>
 );
 

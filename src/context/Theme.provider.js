@@ -5,7 +5,7 @@ export const ThemeContext = createContext()
 
 
 const ThemeContextProvider = ({children}) => {
-    const [themeState, dispatch] = useReducer(themeReducer, {
+    const [themeState, setThemeState] = useReducer(themeReducer, {
         isDarkTheme: false,
         theme: 'light-theme'
     })
@@ -13,7 +13,7 @@ const ThemeContextProvider = ({children}) => {
 
     const changeTheme = () => {
         if (themeState.isDarkTheme) {
-            dispatch({
+            setThemeState({
                 type: 'SET_THEME',
                 payload: {
                     isDarkTheme: false,
@@ -21,7 +21,7 @@ const ThemeContextProvider = ({children}) => {
                 }
             })
         } else {
-            dispatch({
+            setThemeState({
                 type: 'SET_THEME',
                 payload: {
                     isDarkTheme: true,

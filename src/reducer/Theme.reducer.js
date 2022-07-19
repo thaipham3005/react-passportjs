@@ -5,18 +5,13 @@ export const themeReducer = (state, action) => {
     } = action
 
     switch (type) {
-        case 'SET_DARK':
+        case 'SET_THEME':
             return {
                 ...state,
                 isDarkTheme,
                 theme
             }
-        case 'SET_LIGHT':
-            return {
-                ...state,
-                isDarkTheme,
-                theme
-            }
+       
         default:
             return state
     }
