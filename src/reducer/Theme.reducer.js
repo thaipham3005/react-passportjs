@@ -1,3 +1,4 @@
+import { themeDark, themeLight } from "../context/Themes"
 export const themeReducer = (state, action) => {
     const {
         type,
@@ -9,7 +10,8 @@ export const themeReducer = (state, action) => {
             return {
                 ...state,
                 isDarkTheme,
-                theme
+                theme: isDarkTheme? 'theme-dark':'theme-light',
+                color: isDarkTheme? themeDark: themeLight
             }
        
         default:

@@ -4,12 +4,13 @@ npm install axios framer-motion react-router-dom sass styled-components
 npm install react-spinners react-bootstrap
 
 npm install @fvilers/disable-react-devtools
+npm install react-icons 
 
 
 <!-- Redux -->
-npm install @reduxjs/toolkitnpm
+npm install @reduxjs/toolkit
 npm install redux
-install react-redux
+npm install react-redux
 npm install --save-dev @redux-devtools/core
 
 <!-- Install server side for REST API -->

@@ -10,14 +10,12 @@ const ThemeContextProvider = ({children}) => {
         theme: 'light-theme'
     })
 
-
     const changeTheme = () => {
         if (themeState.isDarkTheme) {
             setThemeState({
                 type: 'SET_THEME',
                 payload: {
                     isDarkTheme: false,
-                    theme: 'light-theme'
                 }
             })
         } else {
@@ -25,7 +23,6 @@ const ThemeContextProvider = ({children}) => {
                 type: 'SET_THEME',
                 payload: {
                     isDarkTheme: true,
-                    theme: 'dark-theme'
                 }
             })
         }

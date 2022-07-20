@@ -3,10 +3,11 @@ import axios from "axios";
 import { authReducer } from "../reducer/Auth.reducer";
 import setAuthToken from '../helpers/setAuthToken'
 import { TOKEN_NAME, apiURL } from "../utils/constants";
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const AuthContext = createContext()
 
-const AuthContextProvider = ({ children }) => {
+const AuthContextProvider = ({ children }) => {    
     const [authState, setAuthState] = useReducer(authReducer, {
         authLoading: true,
         isAuthenticated: false,
@@ -17,7 +18,7 @@ const AuthContextProvider = ({ children }) => {
 
     const loadUser = async () => {
         if (localStorage[TOKEN_NAME]) {
-            setAuthToken(localStorage[TOKEN_NAME])
+            await setAuthToken(localStorage[TOKEN_NAME])
         }
 
         try {
@@ -29,13 +30,13 @@ const AuthContextProvider = ({ children }) => {
                         isAuthenticated: true,
                         user: response.data.user,
                         role: response.data.role,
-                        permission: response.data.permissions
+                        permissions: response.data.permissions
                     }
                 })
             }
         } catch (error) {
             localStorage.removeItem(TOKEN_NAME);
-            setAuthToken(null);
+            await setAuthToken(null);
             setAuthState({
                 type: 'SET_AUTH',
                 payload: {
@@ -48,7 +49,14 @@ const AuthContextProvider = ({ children }) => {
         }
     }
 
-    // useEffect(() => loadUser(), [])
+    useEffect(() => {
+        loadUser()
+            // .then(() => {
+            //     if (authState.user === null) {
+            //         setTempAuth()
+            //     }
+            // })
+    }, [])
 
     const login = async userInfo => {
         try {
@@ -85,7 +93,7 @@ const AuthContextProvider = ({ children }) => {
         }
     }
 
-    const logout = ()=>{
+    const logout = () => {
         localStorage.removeItem(TOKEN_NAME);
         setAuthToken(null);
         setAuthState({
@@ -106,5 +114,5 @@ const AuthContextProvider = ({ children }) => {
         </AuthContext.Provider>
     )
 }
-export {AuthContext}
+export { AuthContext }
 export default AuthContextProvider
