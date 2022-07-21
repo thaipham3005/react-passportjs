@@ -9,14 +9,14 @@ const Container = styled.div({
   flexDirection: 'row',
   alignItems: 'stretch',
   justifyContent: 'center',
-  justifyItems:'space-between',
+  justifyItems: 'space-between',
   gap: 20
 
 })
 
 const Column = styled.div({
   flexGrow: 1,
-  flexShrink:1,
+  flexShrink: 1,
   flexBasis: 0,
   display: 'flex',
   flexDirection: 'column',
@@ -27,19 +27,19 @@ function Footer() {
   return (
     <Container>
       <Column>
-       <div>ffdsafdfasd</div>
-       <div>ffdsafdfasd</div>
-       <div>ffdsafdfasd</div>
-       <div>ffdsafdfasd</div>
-       <div>ffdsafdfasd</div>
+        <div>ffdsafdfasd</div>
+        <div>ffdsafdfasd</div>
+        <div>ffdsafdfasd</div>
+        <div>ffdsafdfasd</div>
+        <div>ffdsafdfasd</div>
       </Column>
       <Column>
-      fsdfdsf dsfsdfsadf
+        fsdfdsf dsfsdfsadf
       </Column>
       <Column>
-      fdafdsfdsaf
+        fdafdsfdsaf
       </Column>
-      
+
     </Container>
   )
 }

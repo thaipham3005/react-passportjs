@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from "react";
+import { createContext, useReducer, useEffect, useMemo } from "react";
 import axios from "axios";
 import { authReducer } from "../reducer/Auth.reducer";
 import setAuthToken from '../helpers/setAuthToken'
@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 const AuthContext = createContext()
 
-const AuthContextProvider = ({ children }) => {    
+const AuthContextProvider = ({ children }) => {
     const [authState, setAuthState] = useReducer(authReducer, {
         authLoading: true,
         isAuthenticated: false,
@@ -50,13 +50,21 @@ const AuthContextProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        loadUser()
-            // .then(() => {
-            //     if (authState.user === null) {
-            //         setTempAuth()
-            //     }
-            // })
+        // loadUser()
+        fakeAuth()
     }, [])
+
+    const fakeAuth = async () => {
+        await setAuthState({
+            type: 'SET_AUTH',
+            payload: {
+                isAuthenticated: true,
+                user: 'Demo User',
+                role: ['User'],
+                permissions: ['Bootstrap', 'Antd', 'MUI', 'Chakra']
+            }
+        })
+    }
 
     const login = async userInfo => {
         try {

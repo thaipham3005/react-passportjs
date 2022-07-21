@@ -8,7 +8,7 @@ font-family: Nunito;
 font-size: 1em;
 height: 50px;
 margin: .2em;
-padding: .25em 1em;
+padding: .25em .75em;
 color: #efefef;
 cursor: pointer;
 text-decoration: none;

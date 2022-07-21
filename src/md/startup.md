@@ -7,6 +7,23 @@ npm install @fvilers/disable-react-devtools
 npm install react-icons 
 
 
+npm install @mui/material @emotion/react @emotion/styled
+npm install react-bootstrap bootstrap
+npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
+npm install antd
+
+npm install echarts echarts-for-react echarts-liquidfill echarts-gl
+npm install react-highcharts highcharts-more highcharts-exporting
+npm install recharts
+
+npm install cross-env --save-dev
+
+npm install prettier stylelint lint-staged stylelint-config-prettier stylelint-config-standard --save-dev
+
+npm install eslint eslint-config-react-app eslint-plugin-flowtype eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-config-airbnb --save-dev
+
+npm install @babel/preset-react  babel-eslint babel-plugin-dev-expression babel-plugin-import babel-plugin-macros babel-plugin-module-resolver --save-dev
+
 <!-- Redux -->
 npm install @reduxjs/toolkit
 npm install redux
@@ -20,10 +37,12 @@ npm install nodemailer forever pm2
 npm install passport
 
 <!-- Icon libraries -->
+<!-- React Icons -->
+<!-- Include all other libraries -->
+npm install react-icons 
 <!-- Ant Design Icons -->
 npm install antd @ant-design
-<!-- React Icons -->
-npm install react-icons 
+
 <!-- MUI Icons Material -->
 npm install @mui/material @mui/icons-material
 <!-- Bootstrap Icon -->

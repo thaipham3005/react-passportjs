@@ -3,11 +3,12 @@ import { size } from '../../utils/ScreenSize'
 
 
 const BrandContainer = styled.div`
-flex-grow:5;
+
 display: flex;
 justify-content: left;
 align-items: center;
 gap: 10px;
+width: max-content;
 `
 const Logo = styled.div`
 width: 40px;
@@ -28,12 +29,12 @@ text-shadow: 2px 2px 0 rgba(255,255,255,0.3);
 }
 `
 const Brand = ({ logo, title }) => {
-    return (
-        <BrandContainer >
-            <Logo logo={logo} />
-            <BrandName>{title}</BrandName>
-        </BrandContainer>
-    )
+  return (
+    <BrandContainer >
+      <Logo logo={logo} />
+      <BrandName>{title}</BrandName>
+    </BrandContainer>
+  )
 
 }
 
