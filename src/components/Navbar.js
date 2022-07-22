@@ -3,9 +3,11 @@ import imgLogo from '../assets/images/app-logo.png'
 import ThemeSwitcher from './Navbar/ThemeSwitcher'
 import StyledLink from './Navbar/StyledLink'
 import Brand from './Navbar/Brand'
+import Profile from './Navbar/Profile'
 import { useContext } from 'react'
 import { AuthContext } from '../context/Auth.provider'
 import { size } from '../utils/ScreenSize'
+
 
 const HeaderBar = styled.div`
   box-sizing: border-box;
@@ -26,14 +28,14 @@ const HeaderBar = styled.div`
 `
 
 const NavContainter = styled.nav`
-  flex-grow:5;
+  flex-grow:10;
   display: flex;
   justify-content: flex-end;
 
 `
 
 const ProfileContainer = styled.div`
-  flex-grow:2;
+  flex-grow:1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -55,7 +57,9 @@ function Navbar() {
       </NavContainter>
 
       <ProfileContainer>
+        <Profile />
         <ThemeSwitcher />
+
       </ProfileContainer>
     </HeaderBar>
   )

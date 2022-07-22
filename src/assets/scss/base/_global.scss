@@ -1,5 +1,5 @@
 html,
-body {
+body{
   font-size: 14px;
   font-family: Nunito;
   height: 100vh;
@@ -17,8 +17,10 @@ body {
 #App {
   box-sizing: border-box;
   border: 0;
-  width: 100%;
-  // padding-top: 55px ;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   &.theme-light {
     background-color: #dfdfdf;
@@ -30,9 +32,6 @@ body {
     color: #dfdfdf;
   }
 
-  div {
-    padding: 5px;
-  }
 }
 
 div,
@@ -59,6 +58,14 @@ a {
   /* IE 10 and IE 11 */
   user-select: none;
   /* Standard syntax */
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 0;
+  }
 }
 
 // Scrollbar

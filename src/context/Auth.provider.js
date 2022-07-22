@@ -51,7 +51,7 @@ const AuthContextProvider = ({ children }) => {
 
     useEffect(() => {
         // loadUser()
-        fakeAuth()
+        // fakeAuth()
     }, [])
 
     const fakeAuth = async () => {

@@ -10,10 +10,10 @@ export const themeReducer = (state, action) => {
             return {
                 ...state,
                 isDarkTheme,
-                theme: isDarkTheme? 'theme-dark':'theme-light',
-                color: isDarkTheme? themeDark: themeLight
+                theme: isDarkTheme ? 'theme-dark' : 'theme-light',
+                color: isDarkTheme ? themeDark : themeLight
             }
-       
+
         default:
             return state
     }

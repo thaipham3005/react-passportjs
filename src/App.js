@@ -15,8 +15,8 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <AllRoutes />
-        <Socials />
-        <Footer />
+        {/* <Socials />
+        <Footer /> */}
       </BrowserRouter>
     </div>
 
