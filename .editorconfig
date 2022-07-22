@@ -1,7 +1,17 @@
+#############################
+# Core EditorConfig Options #
+#############################
 root = true
 
+# All files
 [*]
 indent_size = 2
+indent_style = space
 
+# Javascript, Typescript
 [*.{js,ts}]
 indent_size = 2
+
+# Styling
+[*.{css, scss, sass, less}]
+indent_size = 4

@@ -5,7 +5,7 @@ npm install react-spinners react-bootstrap
 
 npm install @fvilers/disable-react-devtools
 npm install react-icons 
-
+npm install firebase react-firebase-hooks
 
 npm install @mui/material @emotion/react @emotion/styled
 npm install react-bootstrap bootstrap
