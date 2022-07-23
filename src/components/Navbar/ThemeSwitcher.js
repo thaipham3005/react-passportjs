@@ -3,7 +3,7 @@ import { ThemeContext } from '../../context/Theme.provider'
 import styled from 'styled-components'
 import {FiSun, FiMoon} from 'react-icons/fi'
 
-const StyledDiv = styled.div`
+const StyledWrapper = styled.div`
     display: flex;
     align-items:center;
     justify-content: center;
@@ -36,10 +36,10 @@ const ThemeSwitcher = (props) => {
     }
 
     return (
-        <StyledDiv className={themeState.theme} onClick={() => switchTheme()}>
+        <StyledWrapper className={themeState.theme} onClick={() => switchTheme()}>
             {themeState.isDarkTheme? <ThemeDark />: <ThemeLight />}
 
-        </StyledDiv>
+        </StyledWrapper>
     )
 }
 

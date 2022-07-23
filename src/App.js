@@ -7,16 +7,14 @@ import { ThemeContext } from './context/Theme.provider'
 import { useContext } from 'react'
 import { firebaseApp } from 'firebase/app';
 
-
 function App() {
   const { themeState: { theme } } = useContext(ThemeContext)
+
   return (
     <div id="App" className={theme}>
       <BrowserRouter>
         <Navbar />
         <AllRoutes />
-        {/* <Socials />
-        <Footer /> */}
       </BrowserRouter>
     </div>
 
