@@ -1,7 +1,8 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 
 function AuthRoute() {
-    return <Outlet />
+    const location = useLocation()
+    return <Outlet  location={location}/>
 }
 
 export default AuthRoute

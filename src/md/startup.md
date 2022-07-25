@@ -31,10 +31,11 @@ npm install react-redux
 npm install --save-dev @redux-devtools/core
 
 <!-- Install server side for REST API -->
-npm install express bcrypt prisma jsonwebtoken dotenv
-npm install compression morgan helmet cors mongodb cron
+npm install express bcrypt prisma jsonwebtoken dotenv concurrently cors
+npm install compression morgan helmet mongodb cron cookie-session
 npm install nodemailer forever pm2 
-npm install passport
+npm install passport passport-google-oauth20
+npm install sequelize 
 
 <!-- Icon libraries -->
 <!-- React Icons -->

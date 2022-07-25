@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BsFacebook, BsGithub, BsGoogle } from 'react-icons/bs'
 import { ThemeContext } from '../../context/Theme.provider'
-
+import AnimatedPage from './../animated/AnimatedPage'
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -22,32 +22,6 @@ const LoginPanel = styled.div`
   gap: 10px;
   border-radius: 10px;
   box-shadow: 0 3px 10px 5px rgba(0,0,0,.2);  
-`
-const AnimLoginPanel = ({ children }) => {
-  const { themeState: { colors } } = useContext(ThemeContext)
-
-  return (
-    <AnimatePresence exitBeforeEnter>
-      <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
-        exit={{ opacity: 0, x: 100, transition: { duration: 1 } }}  >
-        <LoginPanel theme={colors}>
-          {children}
-        </LoginPanel>
-      </motion.div>
-    </AnimatePresence>
-  )
-}
-
-const EmailLogin = styled.div`
-  width: 200px;
-  height: 200px;
-`
-
-const SocialLogin = styled.div`
-  width: 200px;
-  height: 200px;
 `
 
 const StyledButton = styled.button.attrs(props => ({
@@ -72,27 +46,13 @@ function RegisterPage() {
   const { themeState: { colors } } = useContext(ThemeContext)
 
   return (
-    <AnimatePresence exitBeforeEnter>
-      <StyledWrapper>
-        <AnimLoginPanel>
-          <EmailLogin>
+    <StyledWrapper>
+      <AnimatedPage>
+        <LoginPanel theme={colors}>
 
-          </EmailLogin>
-          <SocialLogin>
-            <StyledButton background='#1877F2' width={100}>
-              <BsFacebook size={20} color='#FFF' /> Facebook
-            </StyledButton>
-            <StyledButton background='#CD201F'>
-              <BsGoogle size={20} color='#FFF' /> Google
-            </StyledButton>
-            <StyledButton background='#F5F6F5'>
-              <BsGithub size={20} color='#202020' /> Gitbub
-              <span ></span>
-            </StyledButton>
-          </SocialLogin>
-        </AnimLoginPanel>
-      </StyledWrapper>
-    </AnimatePresence>
+        </LoginPanel>
+      </AnimatedPage>
+    </StyledWrapper>
   )
 }
 
