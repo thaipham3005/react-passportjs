@@ -34,7 +34,6 @@ const PasswordInput = () => {
 
 const FormInput = (props) => {
     const {label, type, inline, focusBackground} = props
-    console.log(type)
   return (
     <StyledWrapper inline={inline}>
         <label>{label}</label>

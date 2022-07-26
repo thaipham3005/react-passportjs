@@ -3,7 +3,6 @@ import axios from "axios";
 import { authReducer } from "../reducer/Auth.reducer";
 import setAuthToken from '../helpers/setAuthToken'
 import { TOKEN_NAME, apiURL } from "../utils/constants";
-import { useLocation, useNavigate } from 'react-router-dom'
 
 const AuthContext = createContext()
 
@@ -49,9 +48,40 @@ const AuthContextProvider = ({ children }) => {
         }
     }
 
+    const getUserLogin = async ()=> {
+        try {
+            const response = await axios.get(`${apiURL}/auth/login/success`)
+            console.log(response);
+            if (response.data.success) {
+                setAuthState({
+                    type: 'SET_AUTH',
+                    payload: {
+                        isAuthenticated: true,
+                        user: response.data.user,
+                        role: response.data.role,
+                        permissions: response.data.permissions
+                    }
+                })
+            }
+        } catch (error) {
+            localStorage.removeItem(TOKEN_NAME);
+            await setAuthToken(null);
+            setAuthState({
+                type: 'SET_AUTH',
+                payload: {
+                    isAuthenticated: false,
+                    user: null,
+                    role: [],
+                    permissions: []
+                }
+            })
+        }
+    }
+
     useEffect(() => {
         // loadUser()
         // fakeAuth()
+        getUserLogin()
     }, [])
 
     const fakeAuth = async () => {

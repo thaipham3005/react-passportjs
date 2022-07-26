@@ -1,4 +1,4 @@
-const apiURL = process.env.NODE_ENV !== 'production' ? 'http://localhost:5000/api' : ''
+const apiURL = process.env.NODE_ENV !== 'production' ? 'http://localhost:5000' : ''
 
 const TOKEN_NAME = 'react_passportjs'
 

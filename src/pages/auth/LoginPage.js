@@ -1,12 +1,10 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
 import { BsFacebook, BsGithub, BsGoogle } from 'react-icons/bs'
 import {BiLogIn} from 'react-icons/bi'
 import { ThemeContext } from '../../context/Theme.provider'
 import AnimatedPage from './../animated/AnimatedPage'
 import ButtonLogoText from '../../components/Button/ButtonLogoText'
-import ToogleSwitch from '../../components/Checkbox/ToogleSwitch'
 import FormInput from '../../components/FormInputs/FormInput'
 
 const StyledWrapper = styled.div`
@@ -51,8 +49,9 @@ function LoginPage() {
 
   }
 
-  const handleGoogleLogin = async(userData)=>{
-    
+  const handleGoogleLogin = ()=>{
+    console.log('google login');
+    window.open('http://localhost:5000/auth/google','_self')
   }
 
   const handleGithubLogin = async(userData)=>{
@@ -88,6 +87,7 @@ function LoginPage() {
               color='#FFF'
               text='Google'
               logo={<BsGoogle size={20} />}
+              onClick={handleGoogleLogin}
             />
 
             <ButtonLogoText background='#c2c2c2'

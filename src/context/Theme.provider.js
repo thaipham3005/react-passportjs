@@ -1,14 +1,16 @@
-import { createContext, useReducer, useEffect } from "react";
+import { createContext, useReducer, useEffect, useMemo } from "react";
 import { themeReducer } from "../reducer/Theme.reducer";
-import { themeLight } from "./Themes";
 
 
 const ThemeContext = createContext()
 
 const ThemeContextProvider = ({ children }) => {
-    const initialState = localStorage['DARK_THEME'] === 'true' ? true : false
+    const initialState = useMemo(()=>{
+        return localStorage['DARK_THEME'] === 'true' ? true : false
+    }) 
 
-    console.log(initialState)
+    // console.log(initialState)
+
     const [themeState, setThemeState] = useReducer(themeReducer, {
         isDarkTheme: initialState ,
         theme: '',
@@ -41,10 +43,14 @@ const ThemeContextProvider = ({ children }) => {
     }, [themeState])
     
 
-    const themeContextData = { changeTheme, themeState }
+    
+    const value = useMemo(()=>{
+        const themeContextData = { changeTheme, themeState }
+        return themeContextData
+    },[themeState])
 
     return (
-        <ThemeContext.Provider value={themeContextData} theme={themeState.colors}>
+        <ThemeContext.Provider value={value} >
             {children}
         </ThemeContext.Provider>
     )

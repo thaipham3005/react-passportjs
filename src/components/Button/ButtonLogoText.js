@@ -23,7 +23,7 @@ const StyledButton = styled.button.attrs(props => ({
 
 const ButtonLogoText = ({ children, ...props }) => {
     let {background, width, color} = props
-    return <StyledButton background={background} width={width} color={color}>
+    return <StyledButton background={background} width={width} color={color} {...props}>
         {props.logo ? props.logo : ''}
         {props.text ? <span>&nbsp;{props.text}</span>  : ''}
         {children}
