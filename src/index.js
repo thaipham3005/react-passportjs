@@ -14,13 +14,13 @@ if (process.env.NODE_ENV === 'production') {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-   <React.StrictMode>
+   //<React.StrictMode>
     <ThemeContextProvider>
       <AuthContextProvider>
         <App />
       </AuthContextProvider>
     </ThemeContextProvider>
-  </React.StrictMode>
+  //</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
