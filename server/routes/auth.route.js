@@ -19,8 +19,8 @@ router.get('/login/failed', (req, res) => {
 })
 
 router.get('/login/success', (req, res) => {
-    console.log('login session::', req)
-    // console.log('login session::', req.sessionStore.sessions)
+    console.log('sessionID::',req.sessionID,'- login session::', req.session)
+    console.log('login sessions::', req.sessionStore.sessions)
     if (!!req.session.passport?.user) {
         res.status(200).json({
             success: true,
@@ -40,12 +40,12 @@ router.get('/login/success', (req, res) => {
 router.get('/google/callback',
     passport.authenticate('google', {
         // session: true,
-        // successRedirect: process.env.WEB_APP_URL,
+        successRedirect: process.env.WEB_APP_URL,
         failureRedirect: '/login'
     }), (req, res) => {
         
         // console.log('callback session::',req.session);
-        res.redirect(process.env.WEB_APP_URL)
+        // res.redirect(process.env.WEB_APP_URL)
     })
 
 

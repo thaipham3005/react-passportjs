@@ -24,12 +24,12 @@ passport.serializeUser((user, done)=>{
     }
 
     // console.log('serialized request::', req)
-    return done(null, sessUser)   
+    done(null, sessUser)   
     
 })
 
-passport.deserializeUser(( user, done)=>{
+passport.deserializeUser((user, done)=>{
     // req.user = user
-    // console.log('deserialized user::', user)
-    return done(null, user)
+    console.log('deserialized user::', user)
+    done(null, user)
 })
