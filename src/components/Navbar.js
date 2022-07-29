@@ -43,6 +43,7 @@ const ProfileContainer = styled.div`
 
 function Navbar() {
   const { authState } = useContext(AuthContext)
+  console.log(authState);
   return (
     <HeaderBar className='header'>
       <Brand title='THEME TEST' logo={imgLogo} />

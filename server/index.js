@@ -9,6 +9,7 @@ const authRoute = require('./routes/auth.route')
 const PORT = process.env.PORT
 require('./passport')
 const app = express()
+
 app.use(cors({
     origin: process.env.WEB_APP_URL,
     method: 'GET,POST,PUSH,DELETE',
@@ -16,24 +17,22 @@ app.use(cors({
 }))
 app.set('trust proxy',1)
 app.use(session({
-    key:'session',
+    secret: process.env.SESSION_SECRET_KEY,
+    key:'react-passportjs',
     genid: (req)=>{
-        console.log('Inside session middleware',req.sessionID);
         return uuid()
     },
-    secret: process.env.SESSION_SECRET_KEY,
     resave: true,
     saveUninitialized: false,
-    store: SessionFileStore(),    
+    store: SessionFileStore({}),    
     cookie: {
         maxAge: 24 * 60 * 60 * 1000,
-        sameSite: false,
-        // httpOnly: false,
-        // domain: '/'
     },
 }))
 app.use(express.json()) //get info from html forms
 app.use(express.urlencoded({extended: false})) //get info from html forms
+require('./passport')
+
 app.use(passport.initialize())
 app.use(passport.session())
 

@@ -19,7 +19,7 @@ router.get('/login/failed', (req, res) => {
 })
 
 router.get('/login/success', (req, res) => {
-    // console.log('sessionID::', req.sessionID, '- login session::', req.session)
+    // console.log('sessionID::',req.sessionID,'- login session::', req.session)
     // console.log('login sessions::', req.sessionStore.sessions)
     if (!!req.user) {
         res.status(200).json({
@@ -28,6 +28,7 @@ router.get('/login/success', (req, res) => {
             user: req.session.passport.user.displayName,
             role: ['User'],
             permissions: ['Bootstrap', 'Antd', 'MUI', 'Chakra']
+
         })
     }
     else {

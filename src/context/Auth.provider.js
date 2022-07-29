@@ -5,6 +5,7 @@ import setAuthToken from '../helpers/setAuthToken'
 import { TOKEN_NAME, apiURL } from "../utils/constants";
 axios.defaults.withCredentials = true
 
+axios.defaults.withCredentials = true
 const AuthContext = createContext()
 
 const AuthContextProvider = ({ children }) => {
@@ -22,7 +23,9 @@ const AuthContextProvider = ({ children }) => {
         }
 
         try {
-            const response = await axios.get(`${apiURL}/auth`)
+            const response = await axios.get(`${apiURL}/auth`, {
+                withCredentials: true,
+            })
             if (response.data.success) {
                 setAuthState({
                     type: 'SET_AUTH',
@@ -49,7 +52,7 @@ const AuthContextProvider = ({ children }) => {
         }
     }
 
-    const getUserLogin = async ()=> {
+    const getUserLogin = async () => {
         try {
             const response = await axios.get(`${apiURL}/auth/login/success`)
             console.log(response);
@@ -58,9 +61,9 @@ const AuthContextProvider = ({ children }) => {
                     type: 'SET_AUTH',
                     payload: {
                         isAuthenticated: true,
-                        user: response.data.user,
-                        role: response.data.role,
-                        permissions: response.data.permissions
+                        user: response.data.user.displayName,
+                        role: response.data.user.role,
+                        permissions: response.data.user.permissions
                     }
                 })
             }
