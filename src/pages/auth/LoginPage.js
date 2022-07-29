@@ -44,7 +44,7 @@ const SocialLogin = styled.div`
 
 function LoginPage() {
   const { themeState: { colors } } = useContext(ThemeContext)
-
+  
   const handleFacebookLogin = async(userData)=>{
 
   }
@@ -65,7 +65,7 @@ function LoginPage() {
   return (
     <StyledWrapper>
       <AnimatedPage>
-        <LoginPanel theme={colors}>
+        <LoginPanel >
           <EmailLogin>
             <FormInput label='Email'></FormInput>
             <FormInput label='Password' type='password'></FormInput>

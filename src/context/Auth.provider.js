@@ -3,6 +3,7 @@ import axios from "axios";
 import { authReducer } from "../reducer/Auth.reducer";
 import setAuthToken from '../helpers/setAuthToken'
 import { TOKEN_NAME, apiURL } from "../utils/constants";
+axios.defaults.withCredentials = true
 
 const AuthContext = createContext()
 

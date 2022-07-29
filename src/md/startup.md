@@ -34,7 +34,7 @@ npm install --save-dev @redux-devtools/core
 npm install express bcrypt prisma jsonwebtoken dotenv concurrently cors cookie-parser express-session jwt
 npm install compression morgan helmet mongodb cron cookie-session
 npm install nodemailer forever pm2 
-npm install passport passport-google-oauth20
+npm install passport passport-google-oauth20 passport-jwt passport-local passport-microsoft passport-linkedin
 npm install sequelize 
 
 <!-- Icon libraries -->

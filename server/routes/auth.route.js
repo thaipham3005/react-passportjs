@@ -2,7 +2,7 @@ const router = require('express').Router()
 const passport = require('passport')
 
 router.get('/google',
-    passport.authenticate('google', { scope: ['profile','email'] })
+    passport.authenticate('google', { scope: ['profile', 'email'] })
 )
 
 router.get('/logout', (req, res) => {
@@ -19,13 +19,15 @@ router.get('/login/failed', (req, res) => {
 })
 
 router.get('/login/success', (req, res) => {
-    console.log('sessionID::',req.sessionID,'- login session::', req.session)
-    console.log('login sessions::', req.sessionStore.sessions)
-    if (!!req.session.passport?.user) {
+    // console.log('sessionID::', req.sessionID, '- login session::', req.session)
+    // console.log('login sessions::', req.sessionStore.sessions)
+    if (!!req.user) {
         res.status(200).json({
             success: true,
             message: 'Login successful',
-            user: req.session.passport.user,
+            user: req.session.passport.user.displayName,
+            role: ['User'],
+            permissions: ['Bootstrap', 'Antd', 'MUI', 'Chakra']
         })
     }
     else {
@@ -43,7 +45,7 @@ router.get('/google/callback',
         successRedirect: process.env.WEB_APP_URL,
         failureRedirect: '/login'
     }), (req, res) => {
-        
+
         // console.log('callback session::',req.session);
         // res.redirect(process.env.WEB_APP_URL)
     })

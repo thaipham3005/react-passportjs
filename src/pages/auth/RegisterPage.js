@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BsFacebook, BsGithub, BsGoogle } from 'react-icons/bs'
-import { ThemeContext } from '../../context/Theme.provider'
+// import { ThemeContext } from '../../context/Theme.provider'
 import AnimatedPage from './../animated/AnimatedPage'
 
 const StyledWrapper = styled.div`
@@ -43,12 +43,12 @@ const StyledButton = styled.button.attrs(props => ({
 `
 
 function RegisterPage() {
-  const { themeState: { colors } } = useContext(ThemeContext)
+  // const { themeState: { colors } } = useContext(ThemeContext)
 
   return (
     <StyledWrapper>
       <AnimatedPage>
-        <LoginPanel theme={colors}>
+        <LoginPanel>
 
         </LoginPanel>
       </AnimatedPage>

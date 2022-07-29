@@ -30,6 +30,6 @@ passport.serializeUser((user, done)=>{
 
 passport.deserializeUser((user, done)=>{
     // req.user = user
-    console.log('deserialized user::', user)
+    // console.log('deserialized user::', user)
     done(null, user)
 })
