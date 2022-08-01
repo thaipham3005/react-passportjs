@@ -10,7 +10,6 @@ passport.use(new GoogleStrategy({
         // done(null, {accessToken, ...profile})
         done(null, profile)
     })
-
 )
 
 passport.serializeUser((user, done)=>{

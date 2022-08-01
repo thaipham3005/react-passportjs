@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import imgLogo from '../assets/images/app-logo.png'
-import ThemeSwitcher from './Navbar/ThemeSwitcher'
-import StyledLink from './Navbar/StyledLink'
-import Brand from './Navbar/Brand'
-import Profile from './Navbar/Profile'
+import imgLogo from '../../assets/images/app-logo.png'
+import ThemeSwitcher from './ThemeSwitcher'
+import StyledLink from './StyledLink'
+import Brand from './Brand'
+import Profile from './Profile'
 import { useContext } from 'react'
-import { AuthContext } from '../context/Auth.provider'
-import { size } from '../utils/ScreenSize'
+import { AuthContext } from '../../context/Auth.provider'
+import { size } from '../../utils/ScreenSize'
 
 
 const HeaderBar = styled.div`
@@ -50,10 +50,10 @@ function Navbar() {
       <NavContainter>
         <StyledLink to="/landing">Landing</StyledLink>
         <StyledLink to="/contact" >Contact</StyledLink>
-        {authState.isAuthenticated && authState.permissions.includes('Chakra') ? <StyledLink to="/chakra" >CharkraUI</StyledLink> : ''}
-        {authState.isAuthenticated && authState.permissions.includes('Antd') ? <StyledLink to="/antd" >Ant Design</StyledLink> : ''}
-        {authState.isAuthenticated && authState.permissions.includes('MUI') ? <StyledLink to="/mui" >MUI</StyledLink> : ''}
-        {authState.isAuthenticated && authState.permissions.includes('Bootstrap') ? <StyledLink to="/bootstrap" >Bootstrap</StyledLink> : ''}
+        {authState.isAuthenticated && authState.permissions?.includes('Chakra') ? <StyledLink to="/chakra" >CharkraUI</StyledLink> : ''}
+        {authState.isAuthenticated && authState.permissions?.includes('Antd') ? <StyledLink to="/antd" >Ant Design</StyledLink> : ''}
+        {authState.isAuthenticated && authState.permissions?.includes('MUI') ? <StyledLink to="/mui" >MUI</StyledLink> : ''}
+        {authState.isAuthenticated && authState.permissions?.includes('Bootstrap') ? <StyledLink to="/bootstrap" >Bootstrap</StyledLink> : ''}
 
       </NavContainter>
 

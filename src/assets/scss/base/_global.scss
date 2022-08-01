@@ -9,14 +9,11 @@ body{
   margin: 0;
   box-sizing: border-box;
   overflow: hidden;
-
-  div {
-    box-sizing: border-box;
-  }
+  -webkit-font-smoothing: antialiased;
+  
 }
 
 #App {
-  box-sizing: border-box;
   border: 0;
   width: 100%;
   height: 100vh;
@@ -37,39 +34,6 @@ body{
 
 }
 
-div,
-nav {
-  -webkit-touch-callout: none;
-  -moz-user-select: none;
-  /* Mozilla Firefox */
-  -webkit-user-select: none;
-  /* Safari */
-  -ms-user-select: none;
-  /* IE 10 and IE 11 */
-  user-select: none;
-  /* Standard syntax */
-}
-
-a {
-  text-decoration: none;
-  -webkit-touch-callout: none;
-  -moz-user-select: none;
-  /* Mozilla Firefox */
-  -webkit-user-select: none;
-  /* Safari */
-  -ms-user-select: none;
-  /* IE 10 and IE 11 */
-  user-select: none;
-  /* Standard syntax */
-}
-
-ul{
-  list-style: none;
-  padding: 0;
-  li {
-    padding: 0;
-  }
-}
 
 // Scrollbar
 /* width */

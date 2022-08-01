@@ -61,9 +61,9 @@ const AuthContextProvider = ({ children }) => {
                     type: 'SET_AUTH',
                     payload: {
                         isAuthenticated: true,
-                        user: response.data.user.displayName,
-                        role: response.data.user.role,
-                        permissions: response.data.user.permissions
+                        user: response.data.user,
+                        role: response.data.role,
+                        permissions: response.data.permissions
                     }
                 })
             }
